@@ -10,6 +10,7 @@ public class PlayerControl : MonoBehaviour
     private float _ANGLEREF, _SANGLEREF;
 
     public GameObject weaponCollider;
+    public Transform playerTransform;
     public Animator animator;
     public float beginSpeed = 1f;
     public float currSpeed;
@@ -22,6 +23,7 @@ public class PlayerControl : MonoBehaviour
     {
         if(Instance == null) Instance = this;
 
+        playerTransform = GetComponent<Transform>();
         controller = GetComponent<CharacterController>();
         currSpeed = beginSpeed;
         m_camera = Camera.main.gameObject.transform;
